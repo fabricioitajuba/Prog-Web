@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar tipo de IP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Selecionar o tipo de IP</h2>
+    
+    <input type="radio" onClick="tipo_IP('DHCP')" id="txt_dhcp">
+    <label>DHCP</label>
+
+    <input type="radio" onClick="tipo_IP('FIXO')" id="txt_fixo">
+    <label>IP Fixo</label>
+    
+    <br><br>
+    
+    End.IP:        
+    <input type="text" id="ip1" size="3">. 
+    <input type="text" id="ip2" size="3">. 
+    <input type="text" id="ip3" size="3">. 
+    <input type="text" id="ip4" size="3">
+    <br><br>
+    
+    Máscara:
+    <input type="text" id="mask1" size="3">.
+    <input type="text" id="mask2" size="3">.
+    <input type="text" id="mask3" size="3">. 
+    <input type="text" id="mask4" size="3">
+    <br>     
+    <br>
+    
+    Gateway:   
+    <input type="text" id="gat1" size="3">.
+    <input type="text" id="gat2" size="3">.
+    <input type="text" id="gat3" size="3">.
+    <input type="text" id="gat4" size="3">    
+
+    <script src="script.js"></script>
+</body>
+</html>
