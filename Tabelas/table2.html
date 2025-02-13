@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            text-align:center;
+            border:0;
+            outline:0;
+        }   
+    </style>
+</head>
+<body>
+
+    <form name="frmTeste">
+        <table border="1">
+            <caption>
+              Teste com tabela e javaScript
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Número</th>
+                <th scope="col">Produto</th>
+                <th scope="col">Quantidade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Produto A</td>
+                <td><input type="text" size="8" name="txtA" value="0"></td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Produto B</td>
+                <td><input type="text" size="8" name="txtB" value="0"></td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Produto C</td>
+                <td><input type="text" size="8" name="txtC" value="0"></td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Produto D</td>
+                <td><input type="text" size="8" name="txtD" value="0"></td>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <td>Produto E</td>
+                <td>
+                  <select name="txtFator">
+                    <optgroup label="Dezena">
+                      <option value="10">10</option>
+                      <option value="20">20</option>
+                    </optgroup>
+                    <optgroup label="Centena">
+                      <option value="100">100</option>
+                      <option value="200">200</option>
+                    </optgroup>
+                  </select>
+                </td>
+              </tr>              
+              <tr>
+                <th scope="row">6</th>
+                <td>Produto F</td>
+                <td>
+                  <select name="txtOpt">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                  </select>
+                </td>
+              </tr>              
+            </tbody>
+            <tfoot>
+              <tr>
+                <th scope="row" colspan="2">Total</th>
+                <td align="center">
+                    <b>
+                        <span id="total">0</span>
+                    </b>
+                </td>
+              </tr>
+            </tfoot>
+          </table> 
+        <br>     
+        <button type="button" onclick="apresentarDado()">Calcula Total</button><br><br>
+    </form>
+
+    <script>
+        function apresentarDado(){
+      
+        var A, B, C, D, E, F; //tipo string
+      
+        A=parseFloat(frmTeste.txtA.value.replace(",",".")); //troca ","" por ".
+        B=parseFloat(frmTeste.txtB.value.replace(",","."));
+        C=parseFloat(frmTeste.txtC.value.replace(",","."));
+        D=parseFloat(frmTeste.txtD.value.replace(",","."));
+        E=parseFloat(frmTeste.txtFator.value.replace(",","."));
+        F=parseFloat(frmTeste.txtOpt.value.replace(",","."));
+
+        Total=A+B+C+D+E+F;
+      
+        document.getElementById("total").innerHTML = Total.toLocaleString('de-DE', { maximumFractionDigits: 2 });
+        }      	
+    </script>
+   
+</body>
+</html>
